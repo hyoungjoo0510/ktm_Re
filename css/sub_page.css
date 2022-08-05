@@ -1,0 +1,327 @@
+body{
+    background: white;
+}
+.topmenuoutBox{
+    position: absolute;
+    width: 1000px;
+    height: 100px;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    /* background: #f60; */
+    overflow: hidden;
+    z-index: 200;
+}
+.borderBox{
+    position: absolute;
+    width: 41.6vw;
+    height: 500px;
+    top: -400px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 23%;
+    background: black;
+    z-index: 210;
+}
+.modelTopMenu{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 220;
+    /* background-color: antiquewhite; */
+}
+.modelTopMenu>li{
+    position: relative;
+    padding: 0 15px;
+    /* box-sizing: border-box; */
+}
+.modelTopMenu>li>a{
+    display: block;
+    font-size: 16px;
+    color: white;
+    font-weight: 200;
+    /* background-color: antiquewhite; */
+}
+.modelTopMenu>li:hover>a{
+    /* visibility: hidden; */
+    opacity: 0;
+}
+.modelTopMenu>li:hover::before{
+    content: attr(data-text);
+    position: absolute;
+    font-size: 16px;
+    font-weight: 500;
+    color: white;
+    cursor: pointer;
+}
+.textBox{
+    /* display: flex;
+    justify-content: center; */
+    position: absolute;
+    width: 100%;
+    top: 10%;
+    /* left: 50%;
+    transform: translateX(-50%); */
+    text-align: center;
+    z-index: 1;
+    /* background-color: antiquewhite; */
+}
+.textBox>span{
+    display: inline-block;
+    position: relative;
+    right: -15px;
+    letter-spacing: -20px;
+    font-size: 240px;
+    font-weight: 800;
+    transform: scale(0.9, 1.2);
+    color: #555;
+    /* -webkit-text-stroke: 8px black;
+    color: white */
+    /* background-color: aqua; */
+}
+.textList>li{
+    display: none;
+    /* opacity: 0; */
+}
+.textList>li:first-child{
+    display: block;
+    /* opacity: 1; */
+}
+.textBox>.subText{
+    display: inline-block;
+    position: relative;
+}
+.textBox>.subText>span{
+    display: inline-block;
+    position: relative;
+    left: -15px;
+    letter-spacing: -20px;
+    font-size: 240px;
+    font-weight: 800;
+    transform: scale(0.9, 1.2);
+    color:#f60;
+    /* background-color: aqua; */
+}
+.textBox>.subText>div{
+    display: block;
+    position: absolute;
+    /* width: 100%; */
+    bottom: 0;
+    right: 5%;
+    font-size: 18px;
+    font-weight: 800;
+    /* background-color: aquamarine; */
+}
+.textBox>.subText>div>span{
+    color: #f60
+}
+.centerList{
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 800px;
+    width: 100%;
+    height: 600px;
+    z-index: 10;
+    /* background-color: antiquewhite; */
+}
+.centerList>ul>li{
+    position: absolute;
+    display: none;
+    /* opacity: 0; */
+    width: 100%;
+}
+.centerList>ul>li>a>img{
+    width: 100%;
+}
+.centerList>ul>li:first-child{
+    display: block;
+    /* opacity: 1; */
+}
+.leftList,
+.rightList{
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    top: 50%;
+    background: rgba(255,102,0,0.4);
+    border-radius: 50%;
+}
+.subcontainer>div>ul>li>span{
+    display: block;
+    position: absolute;
+    width: 100%;
+    bottom: -30px;
+    font-size: 14px;
+    font-weight: 500;
+    /* background-color: antiquewhite; */
+}
+.leftList{
+    left: 5%;
+}
+.leftList>ul>li,
+.rightList>ul>li{
+    position: absolute;
+    width: 300px;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    /* opacity: 0; */
+    /* background-color: aqua; */
+    text-align: center;
+}
+.leftList>ul>li:last-child,
+.rightList>ul>li:nth-child(2){
+    display: block;
+    /* opacity: 1; */
+}
+.leftList>ul>li>img,
+.rightList>ul>li>img{
+    width: 100%;
+}
+.rightList{
+    right: 5%;
+}
+.subPageCtlArrow>div{
+    position: absolute;
+    top: 65%;
+    width: 32px;
+    height: 32px;
+    /* background: #f60; */
+    z-index: 50;
+}
+.subPageCtlArrow>.leftArrow{
+    left: 30%;
+}
+.subPageCtlArrow>.rightArrow{
+    right: 30%;
+}
+.scrollWrap{
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+
+    animation-name: scrollAni;
+	animation-duration: 0.5s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	/* 일정한 애니메이션 속도를 유지 */
+	animation-timing-function:linear;
+}
+.scrollWrap>.clickArrow{
+    padding: 5px 0;
+}
+.scrollWrap>.clickArrow>span:first-child{
+    display: inline-block;
+    width: 22px;
+    height: 2px;
+    background: #f60;
+    transform: skewY(-30deg);
+}
+.scrollWrap>.clickArrow>span:last-child{
+    display: inline-block;
+    width: 22px;
+    height: 2px;
+    background: #f60;
+    transform: skewY(30deg) translate(-3px, 2px);
+}
+.scrollWrap>span{
+    font-size: 24px;
+    font-weight: 600;
+    color: #f60;
+}
+
+@keyframes scrollAni{
+	from{
+		bottom: 10%;
+		opacity: 1;
+	}
+	to{
+		bottom: 13%;
+		opacity: 0.5;
+	}
+}
+
+@media screen and (max-width: 1640px) {
+    .leftList,
+    .rightList{
+        display: none;
+    }
+    .subPageCtlArrow>div{
+        top: 50%;
+    }
+    .subPageCtlArrow>.leftArrow{
+        left: 20%;
+    }
+    .subPageCtlArrow>.rightArrow{
+        right: 20%;
+    }
+    .topmenuoutBox{
+        display: none;
+    }
+}
+@media screen and (max-width: 1280px) {
+    .textBox>span,
+    .textBox>.subText>span{
+        font-size: 18.75vw;
+    }
+}
+@media screen and (max-width: 1040px) {
+    .subPageCtlArrow>.leftArrow{
+        left: 10%;
+    }
+    .subPageCtlArrow>.rightArrow{
+        right: 10%;
+    }
+}
+@media screen and (max-width: 800px){
+    .centerList{
+        height: 75vw;
+        top: 35%;
+    }
+    .textBox{
+        top: 22%;
+    }
+}
+@media screen and (max-width: 720px) {
+    .textBox>span,
+    .textBox>.subText>span{
+        letter-spacing: -10px;
+    }
+}
+@media screen and (max-width: 560px){
+    .textBox>span{
+        right: -10px;
+    }
+    .textBox>.subText>span{
+        left: -10px;
+    }
+    .textBox>.subText>div{
+        font-size: 14px;
+    }
+}
+@media screen and (max-width: 480px) {
+    .textBox>.subText>div{
+        bottom: -5px;
+    }
+}
+@media screen and (max-width: 430px){
+    .textBox>span{
+        right: -5px;
+    }
+    .textBox>.subText>span{
+        left: -5px;
+    }
+    .textBox>.subText>div{
+        font-size: 12px;
+        width: 100%;
+    }
+}

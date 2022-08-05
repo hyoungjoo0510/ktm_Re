@@ -1,0 +1,1172 @@
+body{
+    background: black;
+}
+
+/* 
+    header*********************************
+*/
+
+header{
+    width: 100%;
+    height: 100px;
+    background: #f60;
+    position: fixed;
+    z-index: 100;
+}
+header>.main{
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+    box-sizing: border-box;
+    
+    /* background-color: antiquewhite; */
+}
+.rightBtn{
+    display: flex;
+    height: 40px;
+    align-items: center;
+    position: relative;
+    /* background-color: aqua; */
+}
+.rightBtn>.rightGnb{
+    display: flex;
+    /* margin-right: 30px; */
+    /* background-color: aqua; */
+}
+.rightBtn>.rightGnb>li{
+    position: relative;
+    margin-right: 25px;
+    min-width: 24px;
+}
+
+.rightBtn>.rightGnb img{
+    width: 100%;
+}
+.rightBtn>.rightGnb>li:first-child>a{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.rightBtn .searchBox>label{
+    position: absolute;
+    /* left: 10px; */
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 5;
+    min-width: 24px;
+}
+.rightBtn .searchBox>#search{
+    width: 0;
+    height: 40px;
+    visibility: hidden;
+    background: #bbb;
+    outline: 0;
+    border: 0;
+    /* padding-left: 24px; */
+    opacity: 0;
+    box-sizing: border-box;
+}
+.rightBtn>.hamMenuBtn>a{
+    display: flex;
+    /* height: 50px; */
+    /* justify-content: center;
+    align-items: center; */
+}
+.rightBtn>.hamMenuBtn>a>.svgImg{
+    width: 32px;
+}
+.rightBtn>.hamMenuBtn>a>span{
+    display: inline-block;
+    width: 70px;
+    font-size: 20px;
+    color: black;
+    font-weight: 600;
+    padding: 0 10px;
+    line-height: 20px;
+
+    /* background-color: antiquewhite; */
+}
+/* nav *********************/
+nav{
+    position: absolute;
+    display: block;
+    visibility: hidden;
+    width: 100%;
+    height: 0;
+    left: 0;
+    top: 100px;
+    background: #f60;
+    /* background-color: aqua; */
+    z-index: 200;
+}
+
+nav a{
+    color:black;
+    /* background-color: aqua; */
+}
+nav>#nav{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    opacity: 0;
+    width: 100%;
+    /* background-color: aqua; */
+}
+
+#nav>li{
+    /* position: relative; */
+    text-align: right;
+}
+
+#nav>li>a{
+    display: block;
+    position: relative;
+    font-size: 24px;
+    padding: 0 10px;
+    margin: 0 10px;
+    font-weight: 300;
+    z-index: 10;
+    /* background-color: aqua; */
+}
+#nav>li:hover>a{
+    /* visibility: hidden; */
+    opacity: 0;
+}
+#nav>li:hover::before{
+    display: block;
+    position: absolute;
+    content: attr(data-text);
+    font-weight: 500;
+    font-size: 24px;
+    padding: 0 10px;
+    margin: 0 10px;
+    z-index: 1;
+}
+#nav>.active>a{
+    visibility: hidden;
+}
+#nav>.active::before{
+    display: block;
+    position: absolute;
+    content: attr(data-text);
+    font-weight: 500;
+    font-size: 24px;
+    padding: 0 10px;
+    margin: 0 10px;
+    z-index: 1;
+}
+
+#nav>li:nth-child(2):after{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    width: 0%;
+    height: 2px;
+    transform: translateX(-50%);
+    background: black;
+    transition: 0.5s;
+}
+#nav>li:nth-child(2).active:after{
+    width: 960px;
+}
+/* #nav>li:hover::after{
+    width: 100%;
+} */
+
+#nav>.model>.modelSubWrap{
+    display: none;
+    position: absolute;
+    /* visibility: hidden; */
+    /* opacity: 0; */
+    left: 50%;
+    /* bottom: -50px; */
+    top: 50px;
+    transform: translateX(-50%);
+    max-width: 1080px;
+    width: 100%;
+    /* background-color: antiquewhite; */
+}
+#nav>.model>.modelSubWrap>.sub{
+    display: flex;
+    justify-content: center;
+}
+#nav>.model>.modelSubWrap>.sub>li{
+    /* background-color: aqua; */
+}
+#nav>.model>.modelSubWrap>.sub>li>a{
+    display: block;
+    padding: 0 10px;
+    margin: 0 15px;
+    font-size: 16px;
+    /* background-color: aquamarine; */
+}
+#nav>.model>.modelSubWrap>.subBox{
+    display: block;
+    position: absolute;
+    top: 50px;
+    left: -100%;
+    max-width: 1080px;
+    width: 100%;
+    opacity: 0;
+}
+#nav>.model>.modelSubWrap>.subBox>img{
+    width: 100%;
+}
+#nav .wearWrap{
+    display: none;
+}
+nav>.menuGnb{
+    position: absolute;
+    right: 66px;
+    top: 0;
+    opacity: 0;
+    text-align: right;
+}
+nav>.menuGnb>li>a{
+    display: block;
+    margin: 5px 0;
+}
+
+/* 
+    #mainBanner**********************************
+*/
+#mainBanner{
+    max-width: 1920px;
+    padding-top: 100px;
+    /* padding-bottom: 100px; */
+    /* height: 980px; */
+    overflow: hidden;
+    position: relative;
+    /* margin: 0 auto; */
+    left: 50%;
+    transform: translateX(-50%);
+}
+.mainBannerWrap{
+    display: flex;
+    position: relative;
+    top: 0;
+    left: 0%;
+    width: 300%;
+}
+.mainBannerWrap>li{
+    position: relative;
+}
+.mainBannerWrap>li>img{
+    width: 100%;
+}
+.mainBannerWrap>li>video{
+    /* position: absolute;
+    top: 0;
+    left: 0; */
+    width: 100%;
+    background-color: aqua;
+}
+.mainBannerWrap .textBox{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.mainBannerWrap .textBox>span{
+    font-size: 23px;
+    color: white;
+    font-weight: 600;
+    margin-left: 3px;
+}
+.mainBannerWrap .textBox>p{
+    font-size: 60px;
+    color: white;
+    font-weight: 600;
+    line-height: 50px;
+}
+.mainBannerWrap .textBtn{
+    margin-top: 30px;
+}
+.mainBannerWrap .textBtn>a{
+    display: block;
+    width: 315px;
+    height: 55px;
+    text-align: center;
+    font-size: 18px;
+    line-height: 55px;
+    color: white;
+    background: #f60;
+}
+#mainBanner>.mainBannerBtn{
+    position: absolute;
+    display: flex;
+    /* align-items: center; */
+    bottom: 15%;
+    left:15%;
+    z-index: 10;
+}
+#mainBanner>.timeBar{
+    /* 
+        position: absolute시 max-width만 주면 너비값이 
+        제대로 주어지지 않는다.
+        width: 100%를 함께 주어야만 너비값이 주어진다.
+        혹은 relative를 주어도 되지만
+        relative는 현재 위치를 기준으로 좌표이동만 되는것으로
+        실제위치가 그대로 남아 공백이 생긴다.
+    */
+    position: absolute;
+    max-width: 1920px;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+    /* background-color: aqua; */
+}
+#mainBanner>.timeBar>span{
+    display: block;
+    width: 0%;
+    height: 5px;
+    background: #f60;
+}
+
+/* 
+    #shotCut
+*/
+#shortCut{
+    padding: 50px 0;
+    /* background-color: antiquewhite; */
+}
+#shortCut>.shortCut{
+    display: flex;
+    justify-content: center;
+}
+#shortCut>.shortCut>li>a{
+    display: block;
+    margin: 0 50px;
+}
+#shortCut>.shortCut>li>a>span{
+    line-height: 32px;
+    font-size: 16px;
+    color: white;
+    padding-left: 5px;
+}
+/* 
+    #container
+*/
+/* newModelWrap */
+section{ 
+    padding-bottom: 100px;
+    /* background: aqua; */
+}
+.innerBox{
+    max-width: 1400px;
+    /* padding: 50px 0; */
+    margin: 0 auto;
+    position: relative;
+    /* background-color: antiquewhite; */
+}
+#container{}
+#container>.newModelWrap{
+    padding: 200px 30px 100px 30px;
+    background-color: white;
+}
+
+.newModelWrap>.innerBox{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    /* background-color: aqua; */
+}
+.newModelWrap .titleBox{
+    position: absolute;
+    left: 0;
+    top: -110px;
+    text-align: left;
+    /* font-size: 28px; */
+    /* background-color: aqua; */
+    /* padding-bottom: 50px; */
+}
+.newModelWrap .titleBox>h2{
+    font-size: 80px;
+    line-height: 70px;
+}
+.newModelWrap .titleBox>span{
+    font-size: 32px;
+    font-weight: 600;
+}
+.newModelWrap .imgBox{
+    max-width: 600px;
+}
+.newModelWrap .imgBox>a>img{
+    position: relative;
+    width: 100%;
+}
+.newModelList{
+
+}
+.newModelList>li{
+    margin: 10px 0;
+    /* padding: 0 20px; */
+}
+.newModelList>li>a{
+    display: block;
+    /* width: 100%; */
+    padding: 3px 20px;
+    font-size: 18px;
+    color: white;
+    background: #ffb27f;
+    transition: 0.5s;
+}
+.newModelList>li>a:hover{
+    background: #f60;
+}
+
+/* getBannerWrap */
+.getBannerWrap{
+    padding-top: 100px;
+}
+.getBannerWrap .getBanner{
+    display: flex;
+    justify-content: space-between;
+}
+.getBanner>li{
+    max-width: 500px;
+}
+.getBanner>li>a{
+    display: block;
+    position: relative;
+}
+.getBanner>li>a:after{
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    z-index: 1;
+    transition: 0.5s;
+}
+.getBanner img{
+    width: 100%;
+}
+.getBanner .textBox{
+    position: absolute;
+    max-width: 230px;
+    width: 100%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: left;
+    line-height: 35px;
+    color: white;
+    opacity: 0;
+    z-index: 10;
+    transition: 0.5s;
+    /* background-color: aqua; */
+}
+.getBanner>li>a:hover>.textBox{
+    opacity: 1;
+}
+.getBanner>li>a:hover::after{
+    opacity: 1;
+}
+.getBanner .textBox>span{
+    display: block;
+    font-size: 24px;
+}
+.getBanner .textBox>p{
+    font-size: 38px;
+    font-weight: 500;
+}
+
+/* .newsWrap */
+.newsWrap>.innerBox{
+    padding: 100px 0;
+    /* box-sizing: border-box; */
+}
+.newsWrap .news{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    max-width: 1100px;
+    left: 50%;
+    padding: 0 20px;
+    transform: translateX(-50%);
+    /* background-color: aqua; */
+}
+.newsWrap .title{
+    position: absolute;
+    left: 20px;
+    top: -60px;
+    padding: 5px 15px;
+    color: white;
+    border: 2px solid rgb(138, 137, 137);
+    background:#303030;
+}
+.newsWrap .newsMainImg{
+    max-width: 600px;
+}
+.newsWrap .newsMainImg>img{
+    width: 100%;
+}
+.newsWrap .newsList{
+    padding: 0 15px;
+    /* background-color: cornflowerblue; */
+}
+.newsWrap .newsList>li{
+    max-width: 460px;
+}
+.newsWrap .newsList>li>a{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 5px 0;
+    color: white;
+    font-size: 16px;
+    /* background-color: aliceblue; */
+}
+.newsWrap .newsList>li>a:hover{
+    background: rgba(255,255,255,0.5);
+    color: black;
+}
+.newsWrap .newsList>li:first-child>a:hover{
+    color: white;
+    background: none;
+}
+.newsWrap .newsList>li:first-child{
+    margin-bottom: 50px;
+}
+.newsWrap .newsList>li:first-child>a{
+}
+.newsWrap .newsList>li:first-child>a>span:first-child{
+    font-size: 24px;
+}
+.newsWrap .newsList>li:first-child>a>span:last-child{
+    line-height: 35px;
+}
+.newsWrap .newsList>li:first-child>p{
+    font-size: 16px;
+    color: white;
+}
+/* .wearWrap */
+.wearWrap{
+    max-width: 1920px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.wearBanner{
+    position: relative;
+}
+.wearBanner>img{
+    width: 100%;
+}
+.wearBanner>.wearText{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    /* background-color: antiquewhite; */
+}
+.wearBanner>.wearText>span{
+    color: white;
+    font-size: 48px;
+    font-weight: 500;
+}
+.wearBanner>.wearText>.wearBtn{
+    margin-top: 30px;
+}
+.wearBanner>.wearText>.wearBtn>a{
+    display: block;
+    color: white;
+    font-size: 18px;
+    max-width: 315px;
+    /* height: 55px; */
+    margin: 0 auto;
+    line-height: 55px;
+    background: #f60;
+}
+
+/* .findWrap */
+.findWrap{
+    /* background-color: aquamarine; */
+    padding: 0 30px;
+    box-sizing: border-box;
+}
+.findWrap>.innerBox{
+    /* display: flex;
+    justify-content: space-evenly; */
+    padding: 100px 0;
+    overflow: hidden;
+    position: relative;
+    /* background-color: aqua; */
+}
+
+.findWrap h2{
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 32px;
+    color: white;
+}
+.findWrap .leftBox>.selectBack{
+    background-color: black;
+    background-size:cover
+}
+.findWrap .selectBox{
+    background: url(../icon/selectArrowDwon.png) no-repeat;
+    background-position: 260px 50%;
+    height: 50px;
+    margin: 30px 0;
+}
+#selectDealer{
+    width: 100%;
+    height: 100%;
+    color: white;
+    background: transparent;
+    border: 3px solid #f60;
+    outline: none;
+    text-align: center;
+    -webkit-appearance:none;
+    -moz-appearance:none; 
+    appearance:none;
+}
+#selectDealer>option{
+    background: black; 
+}
+.findWrap .leftBox{
+    position: absolute;
+    top: 15%;
+    left: 4%;
+    max-width: 300px;
+    width: 100%;
+    height: 300px;
+    z-index: 100;
+}
+.findWrap .leftBox>.dealerTextBox{
+    position: relative;
+    background: #f60;
+    width: 100%;
+    height: 150px;
+    padding: 10px 0;
+    color: black;
+}
+.findWrap .leftBox>.dealerTextBox>h3{
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+.findWrap .leftBox>.dealerTextBox>ul{
+    position: absolute;
+    opacity: 0;
+    /* top: 0; */
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+    left: 50%;
+    transform: translateX(-50%);
+    /* background-color: aqua; */
+}
+.findWrap .leftBox>.dealerTextBox>.dealer01{
+    opacity: 1;
+}
+.findWrap .leftBox>.dealerTextBox>ul>li{
+    display: flex;
+    justify-content: center;
+    padding: 2px 0;
+}
+.findWrap .leftBox>.dealerTextBox>ul>li>span:first-child{
+    display: inline-block;
+    width: 90px;
+    margin-right: 10px;
+    /* background-color: aqua; */
+}
+.findWrap .leftBox>.dealerTextBox>ul>li>span:last-child{
+    display: inline-block;
+    width: 100%;
+}
+.findWrap #map{
+    max-width: 1400px;
+    width: 100%;
+    height: 40vw;
+    min-height: 400px;
+}
+/* .findWrap .mapBox{
+    position: relative;
+    max-width: 800px;
+    width: 100%;
+}
+.findWrap .mapBox>div{
+    position: absolute;
+    width: 100%;
+    opacity: 0;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+.findWrap .mapBox>div:first-child{
+    opacity: 1;
+} */
+/* .snsWrap*/
+.snsWrap>.innerBox{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0 30px;
+}
+
+.snsWrap .snsImgBox{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 600px;
+    /* background-color: aqua; */
+}
+.snsWrap .snsImgBox>div{
+    max-width: 300px;
+    overflow:hidden;
+}
+.snsWrap .snsImgBox>div>img{
+    width: 100%;
+    transition: 0.5s;
+}
+.snsWrap .snsImgBox>div:hover>img{
+    transform: scale(1.5);
+}
+.snsWrap .snsList{
+    /* background-color: aqua; */
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+}
+.snsWrap .snsList>h2{
+    color: white;
+    width: 60%;
+    display: inline-block;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    border-bottom: 3px solid white;
+}
+.snsWrap .snsList>ul>li{
+    /* background-color: aquamarine; */
+    margin-bottom: 15px;
+}
+.snsWrap .snsList>ul>li>a{
+    display: block;
+    width: 100%;
+}
+.snsWrap .snsList>ul>li>a>span{
+    display: inline-block;
+    font-size: 16px;
+    text-transform: capitalize;
+    color:white;
+    line-height: 32px;
+    max-width: 100px;
+    width: 100%;
+}
+
+
+/* 
+    footer
+*/
+footer{
+    height: 180px;
+    background: #f60;
+}
+footer>.footWrap{
+    /* background-color: aqua; */
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+footer .footList{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 30px;
+}
+footer .footList>ul{
+    /* background-color: aqua; */
+    /* padding: 0 20px; */
+    color: black;
+}
+footer .footList>ul:first-child>li>span:first-child{
+    display: inline-block;
+    width: 100px;
+    /* background-color: aquamarine; */
+}
+footer .footList>ul:last-child>li:last-child{
+    margin-top: 10px;
+}
+footer p{
+    color: black;
+    padding-top: 10px;
+}
+/* sub_page *************************/
+
+
+/* 반응형 responsive */
+
+@media screen and (max-width: 1280px){
+    .rightBtn>.hamMenuBtn>a>.svgImg{
+        width: 24px;
+    }
+    .rightBtn>.hamMenuBtn>a>span{
+        font-size: 14px;
+    }
+    nav>#nav{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        text-align: right;
+        top: 10%;
+        right: 60px;
+        /* width: 400px; */
+        /* background-color: aqua; */
+    }
+    #nav>li{
+        padding: 3px 0;
+        width: 100%;
+        /* background-color: antiquewhite; */
+    }
+    #nav>li>a{
+        padding:0;
+        margin: 0;
+        font-size: 12px;
+        /* background-color: antiquewhite; */
+    }
+    #nav>li:hover::before{
+        right: 0;
+        padding: 0;
+        margin: 0;
+        font-size: 12px;
+        /* background-color: aqua; */
+    }
+    #nav>.active::before{
+        right: 0;
+        padding: 0;
+        margin: 0;
+        font-size: 12px;
+    }
+    #nav>li:nth-child(2):after{
+        top: 20px;
+        transform: none;
+        left:initial;
+        right: 0;
+    }
+    #nav>li:nth-child(2).active:after{
+        width: 80vw;
+    }
+    
+    #nav>.model{
+        position: relative;
+        /* background-color: aqua; */
+    }
+    #nav>.model>.modelSubWrap{
+        display: none;
+        position: relative;
+        right: 0;
+        bottom:0;
+        top:initial;
+        transform: none;
+        max-width: 50%;
+        /* height: 200px; */
+        text-align: right;
+        /* background-color: aquamarine; */
+    }
+
+    #nav>.model>.modelSubWrap>.sub{
+        display: block;
+        height: 0;
+        padding: 0;
+        transition: 0.5s;
+    }
+    #nav>.model>.modelSubWrap>.active{
+        height: 150px;
+        padding: 10px 0;
+    }
+    #nav>.model>.modelSubWrap>.sub>li{
+        padding: 5px 0;
+    }
+    #nav>.model>.modelSubWrap>.sub>li>a{
+        display: block;
+        padding: 0;
+        margin: 0;
+        font-size: 12px;
+        font-weight: 300;
+    }
+    #nav>.model>.modelSubWrap>.subBox{
+        display: none;
+    }
+    nav>.menuGnb>li>a{
+        font-size: 12px;
+    }
+    /* shortCut ******************/
+    #shortCut{
+        padding: 15px 0;
+    }
+    #shortCut>.shortCut{
+        place-items: center;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        /* background-color: aquamarine; */
+    }
+    #shortCut>.shortCut>li{
+        max-width: 200px;
+        width: 100%;
+        padding: 10px 0;
+        /* background-color: antiquewhite; */
+        
+    }
+    #shortCut>.shortCut>li>a{
+        margin: 0;
+    }
+    #shortCut>.shortCut>li>a>img{
+        margin-left: 30px;
+    }
+    .getBanner>li{
+        padding: 0 10px;
+    }
+
+    .wearBanner>.wearText>span{
+        font-size: 32px;
+    }
+    .wearBanner>.wearText>.wearBtn>a{
+        font-size: 12px;
+        max-width: 220px;
+        line-height: 35px;
+    }
+}
+@media screen and (max-width: 1080px){
+    .newModelWrap .titleBox>h2{
+        font-size: 50px;
+        line-height: 40px;
+    }
+    .newModelWrap .titleBox>span{
+        font-size: 21px;
+        font-weight: 600;
+    }
+    .newModelWrap .imgBox{
+        max-width: 400px;
+    }
+    .newModelList>li>a{
+        font-size: 14px;
+    }
+
+    .newsWrap .newsList>li>a{
+        font-size: 12px;
+    }
+    .newsWrap .newsList>li:first-child>a>span:first-child{
+        font-size: 16px;
+    }
+    .newsWrap .newsList>li:first-child>a>span:last-child{
+        line-height: 25px;
+    }
+    .newsWrap .newsList>li:first-child>p{
+        font-size: 12px;
+    }
+
+
+
+    .mainBannerWrap .textBox>span{
+        font-size: 18px;
+    }
+    .mainBannerWrap .textBox>p{
+        font-size: 32px;
+        line-height: 32px;
+    }
+    .mainBannerWrap .textBtn>a{
+        width: 200px;
+        height: 35px;
+        line-height: 35px;
+        font-size: 14px; 
+    }
+    #mainBanner>.mainBannerBtn{
+        position: static;
+    }
+    #mainBanner>.mainBannerBtn>div{
+        position: absolute;
+        max-width: 32px;
+        width: 100%;
+        /* left: 0; */
+        top: 55%;
+        /* transform: translateY(-50%); */
+    }
+    #mainBanner>.mainBannerBtn>.leftArrow{
+        left: 3%;
+    }
+    #mainBanner>.mainBannerBtn>.rightArrow{
+        right: 3%;
+    }
+    #mainBanner>.mainBannerBtn>div img{
+        width: 100%;
+    }
+}
+@media screen and (max-width: 800px){
+    .mainBannerWrap .textBox>span{
+        font-size: 14px;
+        font-weight: 500;
+    }
+    .mainBannerWrap .textBox>p{
+        font-size: 26px;
+        font-weight: 500;
+        line-height: 26px
+    }
+    .mainBannerWrap .textBtn>a{
+        width: 180px;
+        height: 30px;
+        line-height: 30px;
+        font-size: 12px; 
+    }
+    .newModelWrap>.innerBox{
+        flex-direction: column;
+        justify-content: center;
+    }
+    .newModelWrap .imgBox{
+        max-width: 600px;
+    }
+    .newModelList>li>a{
+        max-width: 300px;
+        font-size: 16px;
+    }
+    .findWrap .leftBox{
+        position: static;
+        margin: 0 auto;
+    }
+
+}
+@media screen and (max-width: 730px){
+    header>.main{
+        padding: 0 30px;
+    }
+    .rightBtn>.rightGnb{
+        position: absolute;
+        right: -10px;
+        top: 96px;
+        z-index: 300;
+        opacity: 0;
+    }
+    .rightBtn .searchBox>#search{
+        height: 30px;
+    }
+    .rightBtn>.rightGnb img{
+        width: 18px;
+    }
+    .rightBtn>.rightGnb>li:first-child{
+        display: none;
+    }
+    nav>.menuGnb{
+        top: -30px;
+    }
+    .getBanner .textBox>span{
+        font-size: 18px;
+    }
+    .getBanner .textBox>p{
+        font-size: 26px;
+    }
+    .getBanner .textBox{
+        padding-left: 15px;
+        box-sizing: border-box;
+    }
+
+    .newsWrap .news{
+        flex-direction: column;
+        justify-content: center;
+    }
+    .newsWrap .newsMainImg{
+        max-width: 470px;
+        margin-bottom: 40px;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    header>.main{
+        /* justify-content: space-between; */
+        padding: 0 10px;
+    }
+    .rightBtn>.rightGnb{
+        padding-right: 40px;
+    }
+    header>.main>.logo{
+        max-width: 100px;
+    }
+    header>.main>.logo img{
+        width: 100%;
+    }
+
+    .mainBannerWrap .textBox>span{
+        font-size: 12px;
+        font-weight: 500;
+    }
+    .mainBannerWrap .textBox>p{
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 18px
+    }
+    .mainBannerWrap .textBtn>a{
+        width: 150px;
+        height: 25px;
+        line-height: 25px;
+        font-size: 10px; 
+    }
+    #mainBanner>.mainBannerBtn>div{
+        max-width: 24px;
+    }
+    #shortCut>.shortCut>li img{
+        width: 24px;
+    }
+    #shortCut>.shortCut>li>a>span{
+        line-height: 24px;
+        font-size: 12px;
+    }
+    .getBannerWrap .getBanner{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .getBanner>li{
+        padding: 10px;
+        box-sizing: border-box;
+    }
+    .getBanner .textBox{
+        padding-left: 15px;
+        box-sizing: border-box;
+    }
+    .wearBanner>.wearText>span{
+        font-size: 18px;
+    }
+    .wearBanner>.wearText>.wearBtn>a{
+        font-size: 12px;
+        max-width: 220px;
+        line-height: 25px;
+    }
+    .snsWrap .snsList>h2{
+        font-size: 14px;
+        font-weight: 500;
+    }
+    .snsWrap .snsList>ul>li>a>img{
+        width: 24px;
+    }
+    .snsWrap .snsList>ul>li>a>span{
+        font-size: 12px;
+        line-height: 24px;
+    }
+
+    footer .footList>ul:first-child{
+        display: none;
+    }
+}
+@media screen and (max-width: 480px){
+    #mainBanner>.mainBannerBtn>div{
+        top: 60%;
+    }
+    .newModelWrap .titleBox>h2{
+        font-size: 32px;
+        line-height: 20px;
+    }
+    .findWrap .selectBox{
+        background-position: 250px 50%;
+    }
+
+}
