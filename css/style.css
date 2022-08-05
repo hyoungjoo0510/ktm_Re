@@ -606,7 +606,7 @@ section{
     /* background-color: aqua; */
 }
 
-.findWrap h2{
+.findWrap>.innerBox>h2{
     position: absolute;
     top: 0;
     left: 0;

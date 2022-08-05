@@ -19,7 +19,7 @@ $(function () {
             $(".rightGnb>li:eq(0)").css("display", "none")
         }
     })
-    $(".hdr").load("/header.html", function(){
+    $(".hdr").load("./header.html", function(){
         //메인메뉴가 펼쳐지지 않은 상태에서 검색 아이콘을 눌렀을때 동작
     $(".rightGnb>li:eq(1)").click(function () {
         //검색 상자가 펼쳐지는 애니메이션
