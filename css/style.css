@@ -263,7 +263,7 @@ nav>.menuGnb>li>a{
     top: 0;
     left: 0; */
     width: 100%;
-    background-color: aqua;
+    /* background-color: aqua; */
 }
 .mainBannerWrap .textBox{
     position: absolute;
@@ -367,7 +367,7 @@ section{
 #container{}
 #container>.newModelWrap{
     padding: 200px 30px 100px 30px;
-    background-color: white;
+    background: white;
 }
 
 .newModelWrap>.innerBox{
@@ -614,7 +614,7 @@ section{
     color: white;
 }
 .findWrap .leftBox>.selectBack{
-    background-color: black;
+    background: black;
     background-size:cover
 }
 .findWrap .selectBox{
