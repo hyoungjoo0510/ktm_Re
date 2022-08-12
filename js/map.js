@@ -7,9 +7,9 @@ $(function(){
         // var x = document.getElementById("selectDealer").selectedIndex;
         // var y = document.getElementById("selectDealer").options;
         // console.log(y[x].index)
-        console.log(selctIndex)
-        console.log(selctText)
-        console.log(selectVal)
+        // console.log(selctIndex)
+        // console.log(selctText)
+        // console.log(selectVal)
         if (selctIndex != 0) {
             $(".dealerTextBox>h3").text(selctText)
             $(".dealerTextBox").children("." + selectVal).css("opacity", 1).siblings("ul").css("opacity", 0)
@@ -42,7 +42,7 @@ $(function(){
 
         var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
 
-        var imageSrc = '../images/icon_map_ktm.png', // 마커이미지의 주소입니다    
+        var imageSrc = '../images/ktmmap.png', // 마커이미지의 주소입니다    
             imageSize = new kakao.maps.Size(64, 32), // 마커이미지의 크기입니다
             imageOption = { offset: new kakao.maps.Point(32, 44) }; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
 
